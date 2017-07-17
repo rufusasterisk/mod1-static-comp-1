@@ -1,0 +1,84 @@
+
+* {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  border: solid;
+  border-width: 10px;
+  border-color: grey;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(3, 33.3333%);
+  position: relative;
+}
+
+.wrapper > div {
+    /*border: 2px solid #ffa94d;*/
+    /*border-radius: 5px;*/
+    /*background-color: #ffd8a8;*/
+    /*padding: 1em;*/
+    color: #fff;
+}
+
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-color: pink;
+}
+.two {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: #35bc7a;
+}
+
+.six {
+  background-color: #35bc7a;
+
+}
+
+.three {
+  background-color: #ff9e00;
+}
+.four, .eight {
+  background-color: #1e8bc4;
+}
+.five {
+  background-color: #f15a49
+}
+.seven, .nine {
+  background-color: #f86925;
+}
+
+div button {
+  height: 1.5em;
+}
+
+ul {
+  position: absolute;
+  right: .7em;
+  top: .7em;
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  padding: .1em;
+}
+
+li .circle.current {
+  background-color: #fdfdfb;
+}
+
+li .circle {
+  background-color: #7d7576;
+  height: .625em;
+  width: .625em;
+  border-radius: .3125em;
+}
