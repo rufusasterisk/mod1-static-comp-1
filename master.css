@@ -56,8 +56,17 @@
   background-color: #f86925;
 }
 
-div button {
-  height: 1.5em;
+.one button {
+  background-color: #43472a;
+  border-style: solid;
+  color: #b1b19a;
+  border-color: #b1b19a;
+  width: 4em;
+  height: 4em;
+  border-radius: 2em;
+  padding: 0;
+  margin: .5em;
+  outline: none;
 }
 
 ul {
