@@ -1,6 +1,7 @@
 
 * {
   margin: 0;
+  font-family: "open sans", sans-serif;
 }
 
 .wrapper {
@@ -9,40 +10,42 @@
   border: solid;
   border-width: 10px;
   border-color: grey;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33.3333%);
-  position: relative;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(6, 16.66666%);
+  /*position: relative;*/
 }
 
-.wrapper > div {
-    /*border: 2px solid #ffa94d;*/
-    /*border-radius: 5px;*/
-    /*background-color: #ffd8a8;*/
-    /*padding: 1em;*/
+div {
+    grid-row-end: span 2;
+    grid-column-end: span 2;
     color: #fff;
+    font-variant: small-caps;
+}
+
+p{
+  font-variant: normal;
+  font-size: .8em;
+  line-height: 1.6em;
 }
 
 .one {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-column-start: 4;
-  grid-column-end: 6;
+  grid-column-start: 7;
+  grid-column-end: span 4;
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: span 6;
   background-color: pink;
+  position: relative;
 }
 .two {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: span 4;
+  grid-row-start: 1;
+  grid-row-end: span 2;
   background-color: #35bc7a;
 }
-
-.six {
-  background-color: #35bc7a;
-
-}
-
 .three {
   background-color: #ff9e00;
 }
@@ -51,6 +54,9 @@
 }
 .five {
   background-color: #f15a49
+}
+.six {
+  background-color: #35bc7a;
 }
 .seven, .nine {
   background-color: #f86925;
@@ -67,6 +73,10 @@
   padding: 0;
   margin: .5em;
   outline: none;
+}
+.one button:hover {
+  background-color: #b1b19a;
+  color: #43472a;
 }
 
 ul {
@@ -90,4 +100,43 @@ li .circle {
   height: .625em;
   width: .625em;
   border-radius: .3125em;
+}
+
+@media (max-width: 1024px){
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    /*grid-template-rows: repeat(6, 16.66666%);*/
+  }
+  .six, .seven, .eight, .nine {
+      grid-row-end: span 1;
+      grid-column-end: span 1;
+    }
+  .one {
+      grid-column-start: 5;
+  }
+}
+@media (max-width: 768px){
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(7, 14.2857%);
+  }
+  div {
+    grid-row-end: span 1;
+    grid-column-end: span 1;
+  }
+  .one {
+    grid-column-start: 1;
+    grid-column-end: span 4;
+    grid-row-start: 1;
+    grid-row-end: span 6;
+  }
+
+  .two {
+    grid-row-start: 6;
+    grid-row-end: span 2;
+    grid-column-end: span 4;
+    z-index: 2;
+  }
 }
