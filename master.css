@@ -1,63 +1,142 @@
 
 * {
   margin: 0;
+  font-family: "open sans", sans-serif;
 }
 
 .wrapper {
   display: grid;
-  height: 100vh;
+  height: 97vh;
   border: solid;
   border-width: 10px;
   border-color: grey;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(3, 33.3333%);
-  position: relative;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(6, 16.66666%);
+  /*position: relative;*/
 }
 
-.wrapper > div {
-    /*border: 2px solid #ffa94d;*/
-    /*border-radius: 5px;*/
-    /*background-color: #ffd8a8;*/
-    /*padding: 1em;*/
+.two button {
+  border-color: #FFFFFF;
+  border-style: solid;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.two button img {
+  height: 10%;
+  width: 10%;
+}
+
+.two p {
+  border-style: solid;
+  border-color: black;
+}
+
+div {
+    grid-row-end: span 2;
+    grid-column-end: span 2;
     color: #fff;
+    font-variant: small-caps;
 }
 
+p{
+  font-variant: normal;
+  font-size: .8em;
+  line-height: 1.6em;
+  font-variant: small-caps;
+}
+.image-one {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-annoyed-rick.png);
+  background-size: cover;
+}
+.image-two {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-drunk-rick.png);
+  background-size: cover;
+}
+.image-three {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-concert-rick.jpeg);
+  background-size: cover;
+}
+div img {
+  width: 33%;
+  height: 33%;
+  display: block;
+}
+.number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.number-box p {
+  display: block;
+}
 .one {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-column-start: 4;
-  grid-column-end: 6;
+  grid-column-start: 7;
+  grid-column-end: span 4;
   grid-row-start: 1;
-  grid-row-end: 4;
-  background-color: pink;
+  grid-row-end: span 6;
+  position: relative;
 }
 .two {
   grid-column-start: 1;
-  grid-column-end: 3;
-  background-color: #35bc7a;
+  grid-column-end: span 4;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  background-color: #6c2429;
 }
-
-.six {
-  background-color: #35bc7a;
-
-}
-
 .three {
-  background-color: #ff9e00;
+  background-color: #f0cf44;
 }
-.four, .eight {
-  background-color: #1e8bc4;
+.four {
+  background-color: #7c633b;
 }
 .five {
-  background-color: #f15a49
+  background-color: #98d6d8;
 }
-.seven, .nine {
-  background-color: #f86925;
+.six {
+  background-color: #6c2429;
+}
+.seven {
+  background-color: #aed6ee;
+}
+.eight {
+  background-color: #7c633b;
+}
+.nine {
+  background-color: #aed6ee;
+}
+.icon-credit {
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
+  font-size: .5em;
 }
 
-div button {
-  height: 1.5em;
+.one button {
+  background-color: #43472a;
+  border-style: solid;
+  color: #b1b19a;
+  border-color: #b1b19a;
+  width: 4em;
+  height: 4em;
+  border-radius: 2em;
+  padding: 0;
+  margin: .5em;
+  outline: none;
+}
+.one button:hover {
+  background-color: #b1b19a;
+  color: #43472a;
 }
 
 ul {
@@ -81,4 +160,69 @@ li .circle {
   height: .625em;
   width: .625em;
   border-radius: .3125em;
+}
+
+@media (max-width: 1024px){
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    /*grid-template-rows: repeat(6, 16.66666%);*/
+  }
+  .six, .seven, .eight, .nine {
+      grid-row-end: span 1;
+      grid-column-end: span 1;
+    }
+  .six img, .seven img, .eight img, .nine img {
+    width: 66%;
+    height: 66%;
+  }
+  .one {
+      grid-column-start: 5;
+  }
+  .six {
+    grid-column-start: 4;
+  }
+  .seven {
+    grid-column-start: 3;
+    grid-row-start: 5;
+  }
+}
+@media (max-width: 768px){
+  * {
+    font-size: .9em;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(7, 14.2857%);
+  }
+  div {
+    grid-row-end: span 1;
+    grid-column-end: span 1;
+  }
+  .one {
+    grid-column-start: 1;
+    grid-column-end: span 4;
+    grid-row-start: 1;
+    grid-row-end: span 6;
+  }
+
+  .two {
+    grid-row-start: 6;
+    grid-row-end: span 2;
+    grid-column-end: span 4;
+    z-index: 2;
+  }
+  .six {
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+  .seven {
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+  img {
+    width: 66%;
+    height: 66%;
+  }
 }
