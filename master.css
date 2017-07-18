@@ -6,13 +6,33 @@
 
 .wrapper {
   display: grid;
-  height: 100vh;
+  height: 97vh;
   border: solid;
   border-width: 10px;
   border-color: grey;
   grid-template-columns: repeat(10, 10%);
   grid-template-rows: repeat(6, 16.66666%);
   /*position: relative;*/
+}
+
+.two button {
+  border-color: #FFFFFF;
+  border-style: solid;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.two button img {
+  height: 10%;
+  width: 10%;
+}
+
+.two p {
+  border-style: solid;
+  border-color: black;
 }
 
 div {
@@ -26,8 +46,37 @@ p{
   font-variant: normal;
   font-size: .8em;
   line-height: 1.6em;
+  font-variant: small-caps;
 }
-
+.image-one {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-annoyed-rick.png);
+  background-size: cover;
+}
+.image-two {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-drunk-rick.png);
+  background-size: cover;
+}
+.image-three {
+  background-repeat: no-repeat;
+  background-image: url(images/cropped-concert-rick.jpeg);
+  background-size: cover;
+}
+div img {
+  width: 33%;
+  height: 33%;
+  display: block;
+}
+.number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.number-box p {
+  display: block;
+}
 .one {
   display: flex;
   align-items: center;
@@ -36,7 +85,6 @@ p{
   grid-column-end: span 4;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: pink;
   position: relative;
 }
 .two {
@@ -44,22 +92,34 @@ p{
   grid-column-end: span 4;
   grid-row-start: 1;
   grid-row-end: span 2;
-  background-color: #35bc7a;
+  background-color: #6c2429;
 }
 .three {
-  background-color: #ff9e00;
+  background-color: #f0cf44;
 }
-.four, .eight {
-  background-color: #1e8bc4;
+.four {
+  background-color: #7c633b;
 }
 .five {
-  background-color: #f15a49
+  background-color: #98d6d8;
 }
 .six {
-  background-color: #35bc7a;
+  background-color: #6c2429;
 }
-.seven, .nine {
-  background-color: #f86925;
+.seven {
+  background-color: #aed6ee;
+}
+.eight {
+  background-color: #7c633b;
+}
+.nine {
+  background-color: #aed6ee;
+}
+.icon-credit {
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
+  font-size: .5em;
 }
 
 .one button {
@@ -112,11 +172,25 @@ li .circle {
       grid-row-end: span 1;
       grid-column-end: span 1;
     }
+  .six img, .seven img, .eight img, .nine img {
+    width: 66%;
+    height: 66%;
+  }
   .one {
       grid-column-start: 5;
   }
+  .six {
+    grid-column-start: 4;
+  }
+  .seven {
+    grid-column-start: 3;
+    grid-row-start: 5;
+  }
 }
 @media (max-width: 768px){
+  * {
+    font-size: .9em;
+  }
   .wrapper {
     display: grid;
     grid-template-columns: repeat(5, 20%);
@@ -138,5 +212,17 @@ li .circle {
     grid-row-end: span 2;
     grid-column-end: span 4;
     z-index: 2;
+  }
+  .six {
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+  .seven {
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+  img {
+    width: 66%;
+    height: 66%;
   }
 }
